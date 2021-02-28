@@ -1,0 +1,161 @@
+@mixin d-flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin d-flex-row($justify :space-between, $align:center) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.wrapper {
+  @include d-flex-col;
+  width: 100%;
+  padding: 0 1em;
+  position: relative;
+}
+
+.itemWrapper {
+  @extend .wrapper;
+  padding: 1em 0;
+}
+
+.dishWrapper {
+  @include d-flex-col;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 100%;
+  margin-bottom: 1em;
+  box-shadow: 0 0 3px #320E3E;
+
+  & > div:first-child {
+    @include d-flex-row;
+    position: relative;
+  }
+
+  & > div:last-child {
+    padding: 1em;
+  }
+}
+
+.pageHeader {
+  @include d-flex-row(center);
+  color: black;
+
+  & > div:last-child {
+    @include d-flex-row(center);
+    width: 60%;
+    padding: 1em;
+    position: absolute;
+    font-weight: bolder;
+    font-size: 1.2em;
+    letter-spacing: 2px;
+  }
+}
+
+.profileImg {
+  width: 100%;
+  clip-path: polygon(0% 0%, 0% 100%, 20% 100%, 20% 15%, 80% 16%, 80% 81%, 20% 80%, 20% 100%, 100% 100%, 100% 0%);
+  height: 180px;
+  overflow: hidden;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.categoryList {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1em 0 0.5em 0;
+}
+
+.categoryItem {
+  padding: 0.5em;
+  position: relative;
+  box-shadow: 0 0 3px #320E3E;
+  background: white;
+  margin: 0.3em;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.activeNav {
+  color: white;
+  background: #320E3E;
+}
+
+.productImageBlock {
+  width: 100%;
+  max-height: 300px;
+  clip-path: polygon(0% 0%, 0% 100%, 68% 100%, 75% 96%, 81% 91%, 86% 86%, 90% 80%, 93% 74%, 96% 68%, 99% 61%, 100% 54%, 100% 0%);
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.productCapacity {
+  list-style: none;
+  @include d-flex-col;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+
+  & > li {
+    width: 70px;
+    padding: 0.5em;
+    border: 1px solid #320E3E;
+    box-shadow: 0 0 3px #320E3E;
+    background: white;
+    margin: 0.7em;
+    border-radius: 10px;
+    text-align: center;
+  }
+}
+
+.combineBtn {
+  width: 100%;
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+
+  & > button {
+    width: 75px;
+    background: #320E3E;
+  }
+}
+
+.test {
+  margin-top: 64px;
+  padding: 1em;
+}
+
+.backBtn {
+  padding: 0.5em 0.7em 0.1em 0.7em;
+  border: 1px solid white;
+  background: #320E3E;
+  opacity: 0.9;
+  position: absolute;
+  top: -15px;
+  left: 3px;
+  z-index: 5;
+  border-radius: 10px;
+
+  & > img {
+    width: 25px;
+    height: 25px;
+    transform: rotate(180deg);
+  }
+}
+
+.wrapperBlock {
+  position: relative;
+}

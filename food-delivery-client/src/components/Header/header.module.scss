@@ -1,0 +1,204 @@
+.header {
+  width: 100vw;
+  position: fixed;
+  z-index: 20;
+  box-shadow: 0 0 5px #320E3E;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+  color: white;
+  background: #A259FF;
+  font-size: 1em;
+  @media screen and (min-width: 954px) {
+    padding: 0 0.5em;
+  }
+
+  & > div:last-child {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.navigation {
+  @media screen and (max-width: 953px) {
+    display: none;
+  }
+}
+
+.visible {
+  display: flex;
+  position: absolute;
+  border: 1px solid silver;
+  background: white;
+  color: #2D0C57;
+  top: 53px;
+  left: 0;
+  z-index: 4;
+}
+
+.logoWrapper {
+  height: 75px;
+  width: 75px;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media screen and (max-width: 953px) {
+    display: none;
+  }
+}
+
+.categoriesList {
+  list-style: none;
+  display: flex;
+  @media screen and (max-width: 953px) {
+    flex-direction: column;
+  }
+}
+
+.categoryItem {
+  padding: 0.5em;
+  margin: 0 0.8em;
+  border-bottom: 0;
+
+  &:hover {
+    border-bottom: 1px solid white;
+  }
+
+  @media screen and (max-width: 953px) {
+    padding: 1em;
+    &:hover {
+      border-bottom: 1px solid #2D0C57;
+    }
+  }
+}
+
+.active {
+  border-bottom: 1px solid white;
+}
+
+.subProfile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 0.5em;
+}
+
+.logoUser {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 0.7em;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.userName {
+  margin: 0 0.2em;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  font-weight: bolder;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 37px;
+    background: linear-gradient(transparent, white, transparent);
+    position: absolute;
+    top: 0;
+    right: 5px;
+  }
+}
+
+.menuWrapper {
+  @media screen and (min-width: 954px) {
+    display: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  background: rgba(111, 18, 231, 0.8);
+  padding: 0.5em;
+  border-radius: 50%;
+  display: flex;
+}
+
+.headerDropdown {
+  display: none;
+  list-style: none;
+  padding: 0.5em 2em;
+  text-align: start;
+  color: black;
+  position: absolute;
+  top: 51px;
+  right: -10px;
+  border: 1px solid #320E3E;
+  background: white;
+  border-radius: 7px;
+  width: max-content;
+  z-index: 10;
+
+  & > li:last-child {
+    border-top: 1px solid silver;
+  }
+
+  & > li {
+    padding: 1em 0;
+  }
+
+  &::before {
+    content: ' ';
+    width: 10px;
+    display: block;
+    height: 10px;
+    background: linear-gradient(135deg, transparent 5px, white 5px);
+    border-bottom: 1px solid #320E3E;
+    border-right: 1px solid #320E3E;
+    z-index: 100;
+    position: absolute;
+    top: -6px;
+    right: 9px;
+    transform: rotate(45deg);
+  }
+}
+
+.showDropdown {
+  display: block;
+}
+
+.cart {
+  position: relative;
+  width: 37px;
+  height: 37px;
+
+  & > img {
+    width: 100%;
+    height: 100%;
+    filter: invert(.95);
+  }
+}
+
+.hamperCount {
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  width: 15px;
+  height: 15px;
+  background: #320E3E;
+  z-index: 10;
+  border-radius: 50%;
+}

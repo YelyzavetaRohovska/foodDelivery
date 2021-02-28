@@ -1,0 +1,122 @@
+
+.addPicture {
+  visibility: hidden;
+
+  &::before {
+    content: 'Select Restaurant Photo';
+    padding: 0.5em;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    border-radius: 5px;
+    visibility: visible;
+    z-index: 10;
+    display: block;
+    background: #751332;
+    border: 1px solid #999;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+  }
+}
+
+.addDish {
+  @extend .addPicture;
+
+  &::before {
+    content: 'Select Dish Preview';
+    top: 1em;
+    right: 0;
+    left: unset;
+  }
+}
+
+.editTitle {
+  position: absolute;
+  top: 40%;
+  left: 21%;
+  width: 58%;
+}
+
+.header {
+  position: relative;
+}
+
+.productCapacity {
+  width: 50%;
+  position: absolute;
+  z-index: 5;
+  bottom: 1em;
+  right: 0;
+}
+
+.template {
+  position: relative;
+}
+
+.modalBody {
+  width: 70%;
+  max-width: 375px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1em 1em 0 1em;
+  background: white;
+  box-shadow: 0 0 3px #320E3E;
+  border-radius: 10px;
+}
+
+.modalOverlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 15;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.visible {
+  display: flex;
+}
+
+.btnBottom {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: flex-end;
+
+  & > div:first-child {
+    margin: 0 0.5em;
+  }
+}
+
+.deleteBtn {
+  background: #751332;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 23px;
+  height: 17px;
+  border: 1px solid white;
+  color: white;
+  border-radius: 7px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 2px;
+    background: white;
+    position: relative;
+  }
+}

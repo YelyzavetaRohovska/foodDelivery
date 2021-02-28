@@ -1,0 +1,51 @@
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  width: 100%;
+
+  & > input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  & > input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+  & > svg {
+    position: absolute;
+    right: 3px;
+    top: 0;
+    height: calc(100% - 0.5em);
+  }
+}
+
+.phoneInput {
+  width: 100% !important;
+}
+
+.input {
+  border-radius: 5px;
+  outline: none;
+  padding: 0.5em;
+  border: 1px solid silver;
+}
+
+.editInput {
+  @extend .input;
+  border: 0;
+  border-bottom: 1px solid silver;
+  border-radius: 0;
+  padding-right: calc(24px + .5em);
+}
+
+.error {
+  color: red;
+  font-size: 0.75em;
+  text-align: start;
+  margin-top: 0.5em;
+}

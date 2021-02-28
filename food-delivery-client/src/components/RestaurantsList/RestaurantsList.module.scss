@@ -1,0 +1,10 @@
+.RestaurantsList {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  @media screen and (min-width: 878px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
